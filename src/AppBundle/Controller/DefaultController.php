@@ -8,15 +8,35 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use SoapClient;
 use SoapServer;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
+use Zend\Soap\AutoDiscover;
+use Zend\Soap\Wsdl\ComplexTypeStrategy\ArrayOfTypeComplex;
 
 class DefaultController extends Controller
 {
     /**
      * @Route("/server", name="soap_server")
+     *
+     * @param Request $request
      */
-    public function soapServerAction()
+    public function soapServerAction(Request $request)
     {
+        if ($request->query->get('wsdl') !== null) {
+            $complexTypeStrategy = new ArrayOfTypeComplex();
+
+            $autoDiscover = new AutoDiscover($complexTypeStrategy);
+            $autoDiscover->setClass(SoapProcessor::class);
+            $autoDiscover->setUri(
+                $this->generateUrl('soap_server', array(), UrlGeneratorInterface::ABSOLUTE_URL)
+            );
+
+            $wsdl = $autoDiscover->generate();
+            echo $wsdl->toXml();
+
+            exit;
+        }
+
         $soapServerOptions = array(
             'classmap' => array(
                 'BusinessObject' => BusinessObject::class,
