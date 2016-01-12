@@ -2,20 +2,35 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\BusinessObject;
+use AppBundle\Processor\SoapProcessor;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use SoapServer;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 class DefaultController extends Controller
 {
     /**
-     * @Route("/", name="homepage")
+     * @Route("/server", name="soap_server")
      */
-    public function indexAction(Request $request)
+    public function soapServerAction()
     {
-        // replace this example code with whatever you need
-        return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..'),
-        ]);
+        $soapServerOptions = array(
+            'classmap' => array(
+                'BusinessObject' => BusinessObject::class,
+            ),
+        );
+
+        $soapServer = new SoapServer(
+            $this->generateUrl('soap_server', array('wsdl' => ''), UrlGeneratorInterface::ABSOLUTE_URL),
+            $soapServerOptions
+        );
+
+        $soapServer->setObject(new SoapProcessor());
+
+        $soapServer->handle();
+
+        exit;
     }
 }
