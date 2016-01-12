@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f83ed05443f4e33151c3315be9a22c16",
-    "content-hash": "c318ab3c6aca3416e0c1fd9e5cf9e495",
+    "hash": "1745b19308bb79911c3958a69b79e3bb",
+    "content-hash": "e5e4489795d0a953836c693945b7c0ca",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -770,57 +770,6 @@
                 "orm"
             ],
             "time": "2016-01-05 21:34:58"
-        },
-        {
-            "name": "incenteev/composer-parameter-handler",
-            "version": "v2.1.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Incenteev/ParameterHandler.git",
-                "reference": "d7ce7f06136109e81d1cb9d57066c4d4a99cf1cc"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Incenteev/ParameterHandler/zipball/d7ce7f06136109e81d1cb9d57066c4d4a99cf1cc",
-                "reference": "d7ce7f06136109e81d1cb9d57066c4d4a99cf1cc",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3",
-                "symfony/yaml": "~2.3|~3.0"
-            },
-            "require-dev": {
-                "composer/composer": "1.0.*@dev",
-                "phpspec/prophecy-phpunit": "~1.0",
-                "symfony/filesystem": "~2.2"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Incenteev\\ParameterHandler\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Christophe Coevoet",
-                    "email": "stof@notk.org"
-                }
-            ],
-            "description": "Composer script handling your ignored parameter file",
-            "homepage": "https://github.com/Incenteev/ParameterHandler",
-            "keywords": [
-                "parameters management"
-            ],
-            "time": "2015-11-10 17:04:01"
         },
         {
             "name": "jdorn/sql-formatter",
@@ -1924,16 +1873,16 @@
         },
         {
             "name": "zendframework/zend-eventmanager",
-            "version": "2.6.1",
+            "version": "2.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-eventmanager.git",
-                "reference": "a03de810b99b0302059ab744c535d464b8dc4721"
+                "reference": "b4354f75f694504d32e7d080641854f830acb865"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-eventmanager/zipball/a03de810b99b0302059ab744c535d464b8dc4721",
-                "reference": "a03de810b99b0302059ab744c535d464b8dc4721",
+                "url": "https://api.github.com/repos/zendframework/zend-eventmanager/zipball/b4354f75f694504d32e7d080641854f830acb865",
+                "reference": "b4354f75f694504d32e7d080641854f830acb865",
                 "shasum": ""
             },
             "require": {
@@ -1966,7 +1915,7 @@
                 "eventmanager",
                 "zf2"
             ],
-            "time": "2015-10-06 11:53:40"
+            "time": "2016-01-12 23:08:36"
         },
         {
             "name": "zendframework/zend-hydrator",
